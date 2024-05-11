@@ -1,3 +1,4 @@
+import RecurringSchedule from "./recurring-schedule";
 import LocalDateTime from "./utils/local-date-time.util";
 
 export default class Event {
@@ -9,6 +10,14 @@ export default class Event {
     this.subject = subject;
     this.from = from;
     this.duration = duration;
+  }
+
+  isStatisfied(schedule: RecurringSchedule) {
+    return (
+      this.from.getDay() === schedule.getDayOfWeek() &&
+      this.from.getHours() === schedule.getFrom().getHours() &&
+      this.from.getMinutes() === schedule.getFrom().getMinutes()
+    );
   }
 }
 
