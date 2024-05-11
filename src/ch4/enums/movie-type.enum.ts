@@ -1,0 +1,7 @@
+enum MovieType {
+  AMOUNT_DISCOUNT = "AMOUNT_DISCOUNT",
+  PERCENT_DISCOUNT = "PERCENT_DISCOUNT",
+  NONE_DISCOUNT = "NONE_DISCOUNT",
+}
+
+export default MovieType;

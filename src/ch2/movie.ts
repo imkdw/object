@@ -30,10 +30,6 @@ export default class Movie {
   }
 
   calculateMovieFee(screening: Screening): Money {
-    if (!this.discountPolicy) {
-      return this.fee;
-    }
-
     return this.fee.minus(this.discountPolicy.calculateDiscountAmount(screening));
   }
 
